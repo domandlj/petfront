@@ -12,7 +12,7 @@ import {
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/petapp",
     element: <App />,
   }
 
