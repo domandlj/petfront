@@ -154,22 +154,7 @@ const App: React.FC = () => {
 
         {/*Take Care */}
         {tab === Tab.TakeCare && (
-          <Container style={{display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            overflowY:'hidden'}}>
-            <div>
-            <iframe
-              src="https://www.lexaloffle.com/bbs/widget.php?pid=unleashed"
-              width="700"
-              height="700"
-              style={{ border: "none", overflow: "hidden" ,transform:"scale(0.7)",transformOrigin: "top left"}}
-              scrolling="no"
-              title="game"
-            />
-            </div>
-          </Container>
-          
+          <></>
         )}
       </Container>
 
