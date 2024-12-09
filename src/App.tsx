@@ -12,6 +12,10 @@ import TagFacesIcon from '@mui/icons-material/TagFaces';
 import UserStateCard from './UserStateCard';
 import {mainColor} from './Style';
 
+
+
+
+
 interface UserChipProps {
   name: string;
 }
@@ -154,7 +158,7 @@ const App: React.FC = () => {
 
         {/*Take Care */}
         {tab === Tab.TakeCare && (
-          <></>
+          <><div style={{color:"white"}}>En desarrollo... 🚧</div></>
         )}
       </Container>
 
