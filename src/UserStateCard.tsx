@@ -9,6 +9,7 @@ import {sendGoingToReturnDog,sendOkBringMyDog, sendOkComeToPickUpDog,
   sendGiveMeDogBack, sendIWantToGiveDogBack, sendFinishWalk, sendDogGiven, sendGoingToPickUpDog} from './WalkMessages';
 
 import {OnePressButton} from './UtilsComponents';
+import Chat from './Chat';
 
 
 const UserStateCard: React.FC = () => {
@@ -105,6 +106,7 @@ const UserStateCard: React.FC = () => {
               </Typography>
               {walk.state==="JustBought"&&(<OnePressButton onClick={() => applyAndUpdate(sendGoingToPickUpDog, walk)} text="Voy a buscarlo"/>)}
               {walk.state==="Running"&&(<OnePressButton onClick={() => applyAndUpdate(sendIWantToGiveDogBack,walk)}text="Devolver"/>)}
+              <Chat userA={walk.owner_name} userB={walk.buyer_name} />
 
               <Divider sx={{ marginY: 1 }} />
             </div>
@@ -132,6 +134,7 @@ const UserStateCard: React.FC = () => {
               {walk.state==="Running"&&(<OnePressButton onClick={() => sendGiveMeDogBack(walk) } text="Traemelo"/>)}
               {walk.state==="WaitingForWalkEnd"&&(<OnePressButton onClick={() => {sendFinishWalk(receivedMessages, walk); fetchUserStateWrapped()} } text="Finalizar"/>)}
               {walk.state==="GoingToPickUpDog"&&(<OnePressButton onClick={() => {sendDogGiven(receivedMessages, walk); fetchUserStateWrapped()} } text="Perro entregado"/>)}
+              <Chat userA={walk.buyer_name} userB={walk.owner_name} />
 
               <Divider sx={{ marginY: 1 }} />
             </div>
@@ -167,11 +170,15 @@ const UserStateCard: React.FC = () => {
 
               
 
-              
+
               <Divider sx={{ marginY: 1 }} />
             </div>
+
           ))
         )}
+
+        
+
 
         {/* Sent Messages 
         <Typography variant="h6" component="div" gutterBottom sx={{ marginTop: '20px' }}>
